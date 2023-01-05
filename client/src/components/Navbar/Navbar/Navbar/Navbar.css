@@ -1,0 +1,29 @@
+.navbar {
+    height: 50px;
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    background-color: coral;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+
+.logo{
+    font-weight: 500;
+}
+
+.navButtons{
+    margin: 20px;
+    border: none;
+    padding: 5px 10px;
+    color: coral;
+}
