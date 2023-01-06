@@ -1,0 +1,48 @@
+.featuredProp{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.featuredPropItem{
+    flex: 1;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.featuredPropImg{
+    width: 100%;
+    
+}
+
+.featuredName{
+    font-weight: bold;
+
+}
+
+.featuredCity {
+    font-weight: 300;
+}
+
+.featuredPrice{
+    font-weight: 600;
+}
+
+.featuredRating > button{
+    background-color: coral;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.featuredRating > span {
+    font-size: 14px;
+}
+
+
