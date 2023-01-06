@@ -9,3 +9,10 @@ const hash = bcrypt.hashSync(req.body.password, salt) // ANOTHER METHOD FOR HASH
 sync fast frontend
 
 countDocuments is a mongoDB feature
+
+client side 
+onChange -- passed in variable name 
+
+handleChange -- 
+...prev, [name]: operation === 'i' ? options[name] + 1 : options[name] - 1, 
+finding the name of the object and then check ops if increase find property value same as decrease
