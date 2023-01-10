@@ -1,13 +1,13 @@
 .mail {
-    width: 100%; /* no limit because its full screen */
-    display: flex;
-    background-color: coral;
-    color: white;
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 50px;
+    width: 100%;
+  margin-top: 50px;
+  background-color: coral;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
 }
 
 .mailInputContainer > input {
