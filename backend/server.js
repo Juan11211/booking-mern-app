@@ -1,8 +1,10 @@
+const cookieParser = require('cookie-parser');
 const express = require('express')
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+app.use(cookieParser())
 app.use(express.json())
 
 const connect = async () => { 
