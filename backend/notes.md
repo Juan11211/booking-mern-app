@@ -16,3 +16,10 @@ onChange -- passed in variable name
 handleChange -- 
 ...prev, [name]: operation === 'i' ? options[name] + 1 : options[name] - 1, 
 finding the name of the object and then check ops if increase find property value same as decrease
+
+app.use(
+  jwt({
+    secret: "shhhhhhared-secret",
+    algorithms: ["HS256"],
+  }).unless({ path: ["/token"] })
+);

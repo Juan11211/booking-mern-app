@@ -21,7 +21,6 @@ const createHotel = async (req, res, next) => {
     }
 } 
 
-
 const findHotel = async (req, res, next) => {
     try {
       const hotel = await Hotel.findById(req.params.hotelId);

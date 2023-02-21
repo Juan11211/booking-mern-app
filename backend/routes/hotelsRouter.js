@@ -3,7 +3,7 @@ const hotelsRouter = express.Router();
 const createError = require('../utils/error')
 const Hotel = require('../models/Hotel');
 const { createHotel, getHotels, findHotel, updateHotel, deleteHotel, countByCity, countByType } = require('../controllers/hotel');
-
+const { verifyAdmin } = require('../utils/verifyToken');
 
 //GET ALL
 hotelsRouter.get('/', getHotels);
@@ -12,22 +12,16 @@ hotelsRouter.get('/', getHotels);
 hotelsRouter.get('/:hotelId', findHotel);
 
 // Create 
-hotelsRouter.post('/', createHotel); 
+hotelsRouter.post('/', verifyAdmin, createHotel); 
 
 //Update 
-hotelsRouter.put('/:hotelId', updateHotel);
+hotelsRouter.put('/:hotelId', verifyAdmin, updateHotel);
 
 //DELETE 
-hotelsRouter.delete('/:hotelId', deleteHotel)
-
-//query cities 
-hotelsRouter.get('/', async(req, res, next) => { 
-    
-})
+hotelsRouter.delete('/:hotelId', verifyAdmin, deleteHotel)
 
 hotelsRouter.get('/countByCity', countByCity);
 
 hotelsRouter.get('/countbytype', countByType);
-
 
 module.exports = hotelsRouter; 
