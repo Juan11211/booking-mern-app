@@ -9,7 +9,7 @@ const { verifyAdmin } = require('../utils/verifyToken');
 hotelsRouter.get('/', getHotels);
 
 //GET BY ID
-hotelsRouter.get('/:hotelId', findHotel);
+hotelsRouter.get('/find/:hotelId', findHotel);
 
 // Create 
 hotelsRouter.post('/', verifyAdmin, createHotel); 
