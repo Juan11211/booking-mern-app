@@ -12,8 +12,12 @@ const createHotel = async (req, res, next) => {
 }
     
     const getHotels = async(req, res, next) => { 
+      const {min, max, ...others} = req.query;
     try{
-        const hotels = await Hotel.find()
+        const hotels = await Hotel.find({...others, cheapestPrice:{
+          $gt: min | 1, $lt: max | 999
+        }, 
+      }).limit(req.query.limit);
         res.status(200).json(hotels)
     }
     catch (err){
@@ -59,8 +63,7 @@ const countByCity = async (req, res, next) => {
       const list = await Promise.all(
         cities.map((city) => {
           return Hotel.countDocuments({ city: city });
-        })
-      );
+        }));
       res.status(200).json(list);
     } catch (err) {
       next(err);
