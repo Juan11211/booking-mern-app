@@ -6,6 +6,7 @@ import { format } from 'date-fns'
 import './List.css'
 import { DateRange } from 'react-date-range'
 import SearchItem from '../../components/searchItem/SearchItem'
+import useFetch from '../../hooks/useFetch'
 
 function List() {
 
@@ -16,6 +17,7 @@ function List() {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
 
+  const {data, loading, error} = useFetch(`/hotels?city=${destination}`)
   return (
     <div>
       <Navbar />
@@ -67,14 +69,14 @@ function List() {
           <button>Search</button>
           </div>
             <div className='listResult'> 
-            <SearchItem />
-            <SearchItem />            
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+           {loading ? "Loading" :
+          <>
+          {data.map(item => ( 
+            <SearchItem key={item.id} item={item} /> // passing item={item} so we're able to use item
+          ))}
+          </> 
+          
+          }
             </div>
            
         </div>
