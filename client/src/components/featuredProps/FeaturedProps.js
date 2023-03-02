@@ -5,7 +5,7 @@ import useFetch from '../../hooks/useFetch'
 
 function FeaturedProps() {
 
-    const {data, loading, error} = useFetch('/hotels?featured=true&limit=4')
+    const {data, loading, error} = useFetch('/hotels?featured=true&limit=4') // creating frontend endpoints. hotels is the query, & adding sum else
 
   return (
     <div className="fp">
