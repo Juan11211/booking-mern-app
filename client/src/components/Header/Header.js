@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+ import React, {useContext, useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBed, faCalendarDays, faCar, faPerson, faPlane, faTaxi} from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from 'react-date-range';
@@ -7,6 +7,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format, addDays} from 'date-fns'
 import {useNavigate} from 'react-router-dom'
+import { SearchContext } from '../../context/SearchContext';
 
 
 
@@ -39,7 +40,10 @@ function Header({type}) {
 
         const navigate = useNavigate()
 
+        const { dispatch } = useContext(SearchContext)
+
         const handleSearch = () => { 
+            dispatch({type: "NEW_SEARCH", payload:{destination, dates, options}})
             navigate('/hotels', {state: {destination, dates, options}})
         }
 

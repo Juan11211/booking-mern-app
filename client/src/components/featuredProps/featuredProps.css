@@ -1,48 +1,46 @@
-.featuredProp{
+.fp {
     width: 100%;
     max-width: 1024px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
-
-}
-
-.featuredPropItem{
+  }
+  
+  .fpItem{
     flex: 1;
-    gap: 18px;
+    gap: 10px;
     display: flex;
     flex-direction: column;
-}
-
-.featuredPropImg{
+  }
+  
+  .fpImg{
     width: 100%;
-    
-}
-
-.featuredName{
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .fpName{
+    color: #333;
     font-weight: bold;
-
-}
-
-.featuredCity {
+  }
+  
+  .fpCity{
     font-weight: 300;
-}
-
-.featuredPrice{
-    font-weight: 600;
-}
-
-.featuredRating > button{
-    background-color: coral;
+  }
+  
+  .fpPrice{
+    font-weight: 500;
+  }
+  
+  .fpRating>button{
+    background-color: #003580;
     color: white;
     border: none;
-    margin-right: 10px;
     padding: 3px;
+    margin-right: 10px;
     font-weight: bold;
-}
-
-.featuredRating > span {
+  }
+  
+  .fpRating>span{
     font-size: 14px;
-}
-
-
+  }
